@@ -12,13 +12,15 @@ function resolved(tempId: string) {
 }
 
 vi.mock('@reportportal/client-javascript', () => ({
-    default: vi.fn().mockImplementation(() => ({
-        startLaunch,
-        startTestItem,
-        finishTestItem,
-        finishLaunch,
-        sendLog
-    }))
+    default: vi.fn().mockImplementation(function () {
+        return {
+            startLaunch,
+            startTestItem,
+            finishTestItem,
+            finishLaunch,
+            sendLog
+        };
+    })
 }));
 
 // eslint-disable-next-line import/first
