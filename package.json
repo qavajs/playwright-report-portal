@@ -1,0 +1,63 @@
+{
+  "name": "@qavajs/playwright-report-portal",
+  "version": "1.0.0",
+  "description": "Playwright reporter that sends @qavajs/playwright-runner-adapter cucumber results to ReportPortal",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "tsc && playwright test --config e2e/playwright.config.ts"
+  },
+  "keywords": [
+    "qavajs",
+    "playwright",
+    "cucumber",
+    "bdd",
+    "reportportal",
+    "reporter"
+  ],
+  "author": "Alexandr Galichenko",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qavajs/playwright-report-portal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/qavajs/playwright-report-portal/issues"
+  },
+  "homepage": "https://github.com/qavajs/playwright-report-portal#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@reportportal/client-javascript": "^5.6.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@qavajs/playwright-runner-adapter": "^2.7.0",
+    "@types/node": "^26.6.6",
+    "dotenv": "^18.0.10",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}
